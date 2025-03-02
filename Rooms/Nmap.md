@@ -172,3 +172,18 @@ Manually downloading script in nmap
 `sudo wget -O /usr/share/nmap/scripts/<script-name>.nse`
 `https://svn.nmap.org/nmap/scripts/<script-name>.nse`
 `nmap --script-updatedb` -  this updates this script to script.db
+
+## Firewall evasion 
+
+bypassing firewall for scans -  common firewall configurations - stealth scans, along with NULL, FIN and Xmas scans
+
+windows will in default block all icmp packets 
+
+
+
+
+
+
+
+
+
