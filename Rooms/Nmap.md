@@ -177,10 +177,19 @@ Manually downloading script in nmap
 
 bypassing firewall for scans -  common firewall configurations - stealth scans, along with NULL, FIN and Xmas scans
 
-windows will in default block all icmp packets 
+When scanning a network, First ICMP echo requests are sent (ping) --> To determine if host is active or alive. 
+But many modern firewalls and windows will in default block all icmp packets 
+If it is blocked, nmap assumes that the host is down and does not scan. --> False Negatives
 
-
-
+`-Pn` - Not bother pinging the host before scanning it 
+- Skip ping and assume the host is alive
+- So regardless of ICMP responses nmap scans the specified ports
+- Ensures no hosts are spikked because of ping request
+Example:
+``` bash
+nmap -Pn -p- 192.168.1.10
+```
+-p- scans all ports 
 
 
 
